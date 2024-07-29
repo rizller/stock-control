@@ -10,12 +10,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './modules/home/home.component';
 
 import { CardModule } from 'primeng/card';
-
 import { InputTextModule } from 'primeng/inputtext';
-
 import { ButtonModule } from 'primeng/button';
-
 import { ToastModule  } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+
+import {CookieService} from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -32,9 +32,9 @@ import { ToastModule  } from 'primeng/toast';
     CardModule, //card aonde colocaremos o formulário
     InputTextModule,
     ButtonModule,
-    ToastModule, //para notificações que são exibidas para o usuário
+    ToastModule, //para notificações que são exibidas para o usuário (para nao ser aquele alerta padrao do navegador)
   ],
-  providers: [],
+  providers: [CookieService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
